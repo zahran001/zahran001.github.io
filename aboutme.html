@@ -5,216 +5,198 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-  <head>
-    <title>My experience</title>
-    <link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      <!-- Header -->
-      <header id="header">
-        <h1>My Experience & Education</h1>
-      </header>
+	<head>
+		<title>My experience</title>
+		<link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Header -->
+			<header id="header">
+				<h1>My Experience & Education</h1>
+			</header>
 
-      <!-- Nav -->
-      <nav id="nav">
-        <ul>
-          <li>
-            <a href="index.html"><strong>Zahran Yahia Khan</strong></a> &emsp;
-            &emsp;
-          </li>
-          <li><a href="aboutme.html">About me</a></li>
-          <li><a href="projects.html">My projects</a></li>
-          <li><a href="more.html">More</a></li>
-        </ul>
-      </nav>
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li>
+						<a href="index.html"><strong>Zahran Yahia Khan</strong></a> &emsp; &emsp;
+					</li>
+					<li><a href="aboutme.html">About me</a></li>
+					<li><a href="projects.html">My projects</a></li>
+					<li><a href="more.html">More</a></li>
+				</ul>
+			</nav>
 
-      <!-- Main -->
-      <div id="main">
-        <!-- Content -->
-        <section id="content" class="main">
-          <div class="box alt">
-            <div class="row gtr-uniform">
-              <div class="col-4">
-                <span class="image fit"
-                  ><img src="images/zahran2.jpeg" alt=""
-                /></span>
-              </div>
-              <div class="col-4">
-                <span class="image fit"
-                  ><img src="images/portfolioImage.jpg" alt=""
-                /></span>
-              </div>
-              <div class="col-4">
-                <span class="image fit"
-                  ><img src="images/portrait.jpeg" alt=""
-                /></span>
-              </div>
-            </div>
-          </div>
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="content" class="main">
+					<div class="box alt">
+						<div class="row gtr-uniform">
+							<div class="col-4">
+								<span class="image fit"><img src="images/zahran2.jpeg" alt="" /></span>
+							</div>
+							<div class="col-4">
+								<span class="image fit"><img src="images/portfolioImage.jpg" alt="" /></span>
+							</div>
+							<div class="col-4">
+								<span class="image fit"><img src="images/portrait.jpeg" alt="" /></span>
+							</div>
+						</div>
+					</div>
 
-          <h4>
-            <center>
-              <strong>Fun tidbit!</strong> <br />
-              My first coding project was a
-              <a
-                href="https://drive.google.com/file/d/1yML7_GdWkb2ZEw-kM89IMZPwN0d2TRaf/view"
-                target="_blank"
-                >Music Player</a
-              >
-              - and even now, the most used app on my phone is <br />Spotify.
-            </center>
-          </h4>
+					<h4>
+						<center>
+							<strong>Fun tidbit!</strong> <br />
+							My first coding project was a
+							<a href="https://drive.google.com/file/d/1yML7_GdWkb2ZEw-kM89IMZPwN0d2TRaf/view" target="_blank">Music Player</a>
+							- and even now, the most used app on my phone is <br />Spotify.
+						</center>
+					</h4>
 
-          <!-- EXPERIENCE  -->
+					<!-- EXPERIENCE  -->
 
-          <h1>EXPERIENCE</h1>
+					<h1>EXPERIENCE</h1>
 
-          <h2>
-            <strong>Software Engineer Intern</strong> | Rocket Mortgage |
-            Detroit, MI | May '24 - August '24
-          </h2>
-          <p>
-            &bull; Designed and implemented new data fields across the
-            <strong>Angular UI</strong> and <strong>.NET backend</strong> to
-            optimize the VA IRRRL and FHA Streamline loan application process,
-            ensuring accurate data transmission to downstream services, Rocket
-            Logic and AMP, enabling brokers to lock rates without triggering any
-            Qualification Failure Reasons. <br />&bull; Implemented
-            <strong>automated</strong> API testing by migrating collections from
-            Postman to Bruno, utilizing <strong>request chaining</strong> via
-            Bruno CLI for integrating the tests into a
-            <strong>CircleCI</strong> pipeline with <strong>Docker</strong> to
-            ensure a consistent and isolated <strong>.NET</strong> application
-            environment, enabling early issue detection and
-            <strong>stable deployments</strong> with real-time monitoring via
-            <strong>Dynatrace</strong>.
+					<h2>
+						<strong>Software Engineer Intern</strong> | Rocket Mortgage |
+						Detroit, MI | May '25 - August '25
+					</h2>
+					<p>
+						&bull; Migrated a .NET microservice from AWS ECS to AWS EKS (Kubernetes with the Istio service mesh) using Helm, Terraform (IRSA/IAM), and GitHub Actions; executed a blue/green cutover via Amazon Route 53 weighted routing, enforced Istio mTLS and a default-deny ingress policy to implement a zero-trust model (encrypt east-west traffic and limit lateral movement), standardized cluster logging with Splunk OpenTelemetry Collector as a DaemonSet, added Dynatrace release correlation to tie releases to telemetry, and retired legacy ECS services and pruned related IaC—eliminating API Gateway/Lambda proxy overhead and improving deployment time by ~50% and API latency by ~33%, while strengthening security posture and reducing run-rate costs.
+						<br />&bull; Built a distributed multi-agent mortgage processing system using Google A2A (JSON-RPC) and Anthropic MCP; designed an orchestrator agent (Gemini LLM + Google ADK) with auto-discovery of all agents and MCP tools, routing ~95% of queries to specialized agents handling loan lookups, historical case resolution, compliance validation, and pricing guidance, with a Flask UI, async task/state management, and circuit-breaker resilience — cutting query latency by ~40% and sustaining 100+ concurrent sessions in k6 load tests. Extended the system by integrating a .NET ServiceNow backend via MCP, leveraging Titan embeddings for semantic incident search, knowledge base retrieval, and ticket updates, enabling RAG workflows that reduced query latency by ~35% while ensuring legal compliance through a PII/PIFI redaction API and LLM-enforced guardrails.
+						<br />&bull; Developed post–loan registration and non-agency product features in .NET 8 microservices and Angular by implementing mutator logic, feature flags, DI refactors, and Angular components with dynamic validators built on the Rocket Design System, validated through xUnit/Jest unit tests and a Playwright e2e suite integrated into CI/CD — reducing frontline support requests by ~80% and unlocking ~$246M in loan volume opportunity.
+					</p>
 
-            <br />&bull; Led a local development environment optimization
-            project, reducing development cycle times by utilizing
-            <strong>Rancher</strong> networking configurations to orchestrate
-            Docker containers for Angular UI, <strong>BFF</strong>, and .NET
-            backend. Overcame cross-container communication challenges and
-            streamlined workflows by integrating <strong>AWS SSM</strong> for
-            secure parameter storage and leveraging <strong>AWS IIC</strong> for
-            role-based access management, eliminating the reliance on external
-            preview environments.
-          </p>
+					<h2>
+						<strong>Software Engineer Intern</strong> | Rocket Mortgage |
+						Detroit, MI | May '24 - August '24
+					</h2>
+					<p>
+						&bull; Designed and implemented new data fields across the
+						<strong>Angular UI</strong> and <strong>.NET backend</strong> to
+						optimize the VA IRRRL and FHA Streamline loan application process,
+						ensuring accurate data transmission to downstream services, Rocket
+						Logic and AMP, enabling brokers to lock rates without triggering any
+						Qualification Failure Reasons. <br />&bull; Implemented
+						<strong>automated</strong> API testing by migrating collections from
+						Postman to Bruno, utilizing <strong>request chaining</strong> via
+						Bruno CLI for integrating the tests into a
+						<strong>CircleCI</strong> pipeline with <strong>Docker</strong> to
+						ensure a consistent and isolated <strong>.NET</strong> application
+						environment, enabling early issue detection and
+						<strong>stable deployments</strong> with real-time monitoring via
+						<strong>Dynatrace</strong>.
+						<br />&bull; Led a local development environment optimization
+						project, reducing development cycle times by utilizing
+						<strong>Rancher</strong> networking configurations to orchestrate
+						Docker containers for Angular UI, <strong>BFF</strong>, and .NET
+						backend. Overcame cross-container communication challenges and
+						streamlined workflows by integrating <strong>AWS SSM</strong> for
+						secure parameter storage and leveraging <strong>AWS IIC</strong> for
+						role-based access management, eliminating the reliance on external
+						preview environments.
+					</p>
 
-          <h2>
-            <strong>Database Developer Intern</strong> | VS One Bangladesh
-            Ltd. | Dhaka, Bangladesh | May '23 - July '23
-          </h2>
-          <p>
-            &bull; Designed and implemented database structures using
-            <strong>MSSQL</strong> and enhanced database performance by
-            optimizing <strong>T-SQL</strong> queries. <br />&bull; Integrated
-            <strong>Crystal Reports</strong> with MSSQL databases and
-            implemented parameterized reports by addressing
-            <strong>8</strong> user-specific report customization requests.
-            <br />&bull; Documented and maintained
-            <strong>3</strong> comprehensive entity-relationship diagrams,
-            providing clear visual representations for future reference and team
-            collaboration.
-          </p>
+					<h2>
+						<strong>Database Developer Intern</strong> | VS One Bangladesh
+						Ltd. | Dhaka, Bangladesh | May '23 - July '23
+					</h2>
+					<p>
+						&bull; Designed and implemented database structures using
+						<strong>MSSQL</strong> and enhanced database performance by
+						optimizing <strong>T-SQL</strong> queries. <br />&bull; Integrated
+						<strong>Crystal Reports</strong> with MSSQL databases and
+						implemented parameterized reports by addressing
+						<strong>8</strong> user-specific report customization requests.
+						<br />&bull; Documented and maintained
+						<strong>3</strong> comprehensive entity-relationship diagrams,
+						providing clear visual representations for future reference and team
+						collaboration.
+					</p>
 
-          <h2>
-            <strong>USF Green & Gold Tour Guide</strong> | Office of Admissions
-            | USF Tampa, FL | May '23 - Present
-          </h2>
-          <p>
-            &bull; Conducted more than <strong>150</strong> campus tours per
-            semester, effectively serving over <strong>15,000</strong> guests,
-            showcasing USF’s facilities and academic programs to prospective
-            students and their families. <br />&bull; Collaborated with the
-            admissions team in coordinating large-scale events and group visits,
-            effectively managing and engaging over <strong>1,200</strong> daily
-            attendees, bolstering freshman experience and involvement.
-            <br />&bull; Enhanced office management by streamlining schedule
-            organization, appointment coordination, and supporting team members,
-            ensuring seamless operational efficiency.
-          </p>
+					<h2>
+						<strong>USF Green & Gold Tour Guide</strong> | Office of Admissions
+						| USF Tampa, FL | May '23 - Present
+					</h2>
+					<p>
+						&bull; Conducted more than <strong>150</strong> campus tours per
+						semester, effectively serving over <strong>15,000</strong> guests,
+						showcasing USF's facilities and academic programs to prospective
+						students and their families. <br />&bull; Collaborated with the
+						admissions team in coordinating large-scale events and group visits,
+						effectively managing and engaging over <strong>1,200</strong> daily
+						attendees, bolstering freshman experience and involvement.
+						<br />&bull; Enhanced office management by streamlining schedule
+						organization, appointment coordination, and supporting team members,
+						ensuring seamless operational efficiency.
+					</p>
 
-          <!-- EDUCATION -->
-          <h1>EDUCATION</h1>
-          <h2>
-            <strong>University of South Florida</strong> | Bachelor of Science
-            in Computer Science | May 2026
-          </h2>
-          <h4>&emsp; &emsp; &bull; Current year: <strong> Junior </strong></h4>
-          <h4>&emsp; &emsp; &bull; GPA: <strong> 3.98 / 4.00</strong></h4>
+					<!-- EDUCATION -->
+					<h1>EDUCATION</h1>
+					<h2>
+						<strong>University of South Florida</strong> | Bachelor of Science
+						in Computer Science | May 2026
+					</h2>
+					<h4>&emsp; &emsp; &bull; Current year: <strong> Junior </strong></h4>
+					<h4>&emsp; &emsp; &bull; GPA: <strong> 3.97 / 4.00</strong></h4>
+          <br>
+					<h2>SKILLS</h2>
+					<p>
+						&bull; <strong>Technical Languages: </strong> C#, C, C++, Python,
+						Go, Java, JavaScript, MySQL, SQL, HTML5, CSS <br />&bull;
+						<strong>Tech stack: </strong> .NET, Node.js, React.js, Express.js,
+						Angular, Git, GitHub, Arduino, Linux, RISC-V, Verilog, Rancher,
+						Kubernetes, AWS, Playwright
+					</p>
 
-          <h2>SKILLS</h2>
-          <p>
-            &bull; <strong>Technical Languages: </strong> C#, C, C++, Python,
-            Go, Java, JavaScript, MySQL, SQL, HTML5, CSS <br />&bull;
-            <strong>Tech stack: </strong> .NET, Node.js, React.js, Express.js,
-            Angular, Git, GitHub, Arduino, Linux, RISC-V, Verilog, Rancher,
-            Kubernetes, AWS, Playwright
-          </p>
+					<h2>RELEVANT COURSEWORK</h2>
+					<p>
+						&bull; Data Structures &bull; Analysis Of Algorithms &bull; Database
+						Design &bull; Software Engineering &bull; Automata Theory &bull;
+						Programming Concepts &bull; Program Design &bull; Computer
+						Organization &bull; Computer Logic and Design &bull; Introduction to
+						Discrete Structures &bull; Linear Systems
+					</p>
+				</section>
+			</div>
 
-          <h2>RELEVANT COURSEWORK</h2>
-          <p>
-            &bull; Data Structures &bull; Analysis Of Algorithms &bull; Database
-            Design &bull; Software Engineering &bull; Automata Theory &bull;
-            Programming Concepts &bull; Program Design &bull; Computer
-            Organization &bull; Computer Logic and Design &bull; Introduction to
-            Discrete Structures &bull; Linear Systems
-          </p>
-        </section>
-      </div>
+			<!-- Footer -->
+			<footer id="footer">
+				<h2>connect with me!</h2>
+				<dl class="alt">
+					<dt>located</dt>
+					<dd>Tampa, FL &bull; United States</dd>
+					<dt>email</dt>
+					<dd><a href="#">zykkhan.bd@gmail.com</a></dd>
+				</dl>
+				<ul class="icons">
+					<li>
+						<a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a>
+					</li>
+					<li>
+						<a href="https://github.com/zahran001" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a>
+					</li>
+				</ul>
+				<p class="copyright">
+					&copy; Design: <a href="https://html5up.net">HTML5 UP</a>.
+				</p>
+			</footer>
+		</div>
 
-      <!-- Footer -->
-      <footer id="footer">
-        <h2>connect with me!</h2>
-        <dl class="alt">
-          <dt>located</dt>
-          <dd>Tampa, FL &bull; United States</dd>
-
-          <dt>email</dt>
-          <dd><a href="#">zykkhan.bd@gmail.com</a></dd>
-        </dl>
-        <ul class="icons">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/zahran-yahia/"
-              target="_blank"
-              class="icon brands fa-linkedin alt"
-              ><span class="label">LinkedIn</span></a
-            >
-          </li>
-          <li>
-            <a
-              href="https://github.com/zahran001"
-              target="_blank"
-              class="icon brands fa-github alt"
-              ><span class="label">GitHub</span></a
-            >
-          </li>
-        </ul>
-        <p class="copyright">
-          &copy; Design: <a href="https://html5up.net">HTML5 UP</a>.
-        </p>
-      </footer>
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-  </body>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
 </html>
