@@ -29,6 +29,7 @@ This is a personal portfolio website showcasing professional experience, project
 - jQuery.scrolly (smooth anchor scrolling)
 - Font Awesome 5+ (icons)
 - Google Fonts (Source Sans Pro)
+- ConveyThis (multi-language translation service)
 
 ### No Build System
 - Direct HTML/CSS/JS delivery
@@ -142,6 +143,7 @@ zahran001.github.io/
    - Features list
    - Add screenshots to `images/` directory (name them `myproject1.png`, `myproject2.png`, etc.)
    - Update image references in HTML
+   - **IMPORTANT:** Add ConveyThis script snippet in the `<head>` section (see section 7 below)
 3. Add project card to [projects.html](projects.html):
    - Add a new `<article>` block in the projects grid
    - Include thumbnail, title, description, and link to detail page
@@ -149,7 +151,7 @@ zahran001.github.io/
 
 **Files to Update:**
 - `projects.html` - Add project card
-- `myproject.html` - New detail page
+- `myproject.html` - New detail page (include ConveyThis snippet)
 - `images/` - Add project screenshots
 - `index.html` - (Optional) Add to featured projects
 
@@ -240,6 +242,46 @@ zahran001.github.io/
 - Email
 
 **Note:** These are functioning fine and low priority for updates.
+
+---
+
+### 7. Multi-Language Support (ConveyThis)
+
+**Integration:** ConveyThis is integrated across all pages for automatic translation
+
+**Implementation:**
+All 9 HTML pages include the ConveyThis script in the `<head>` section:
+
+```html
+<!--           ConveyThis Script Start         -->
+<script src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_897a2f67b38f0202a8fccfc77ddcb5bd"></script>
+<!--           ConveyThis Script End         -->
+```
+
+**Location:** Just before the closing `</head>` tag (after CSS links)
+
+**How It Works:**
+- Widget appears at bottom right of website
+- Users can switch languages via the widget
+- Content is automatically translated
+- Public API key is safe to expose (prefixed with `pub_`)
+- Key is domain-restricted to zahran001.github.io
+
+**When Adding New Pages:**
+- **ALWAYS** include the ConveyThis snippet in new HTML pages
+- Copy the exact snippet from any existing page
+- Place it in the `<head>` section before `</head>`
+
+**Pages with ConveyThis:**
+- ✓ [index.html](index.html)
+- ✓ [aboutme.html](aboutme.html)
+- ✓ [projects.html](projects.html)
+- ✓ [project_showcase.html](project_showcase.html)
+- ✓ [bookatour.html](bookatour.html)
+- ✓ [notemart.html](notemart.html)
+- ✓ [attendance.html](attendance.html)
+- ✓ [lineFollowerRobot.html](lineFollowerRobot.html)
+- ✓ [more.html](more.html)
 
 ---
 
@@ -479,5 +521,15 @@ When assisting with this project:
 
 ---
 
-**Last Updated:** 2025-10-22
-**Document Version:** 1.0
+**Last Updated:** 2025-10-28
+**Document Version:** 1.1
+
+---
+
+## Changelog
+
+### Version 1.1 (2025-10-28)
+- Added ConveyThis multi-language translation service to all 9 pages
+- Updated dependencies list to include ConveyThis
+- Added section 7: Multi-Language Support (ConveyThis) with integration details
+- Updated "Adding a New Project" workflow to include ConveyThis snippet requirement
