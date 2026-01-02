@@ -15,9 +15,6 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	<!--           ConveyThis Script Start         -->
-	<script src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_897a2f67b38f0202a8fccfc77ddcb5bd"></script>
-	<!--           ConveyThis Script End         -->
 </head>
 
 <body class="is-preload">
@@ -73,17 +70,11 @@
 							<div class="col-6 col-12-medium">
 								<h2><strong>Features</strong></h2>
 								<ol>
-									<li>Architected a <strong>6-service distributed system</strong> in .NET 8 using
-										<strong>database-per-service</strong> Azure SQL databases, enabling independent
-										scaling and service isolation while maintaining data consistency.
+									<li>Architected a <strong>6-service .NET 8 microservices platform</strong> on Azure Container Apps; implemented <strong>database-per-service isolation</strong> and a <strong>Redis cache-aside pattern</strong>, achieving a <strong>95% reduction in catalog query latency</strong>.
 									</li>
-									<li>Implemented <strong>event-driven communication</strong> with Azure Service Bus
-										for async messaging, <strong>JWT/Identity authentication</strong>, and internal
-										token propagation across all services for secure inter-service communication.
+									<li>Engineered an <strong>event-driven architecture</strong> using Azure Service Bus and built a full observability stack with <strong>OpenTelemetry and Jaeger</strong>; developed custom <strong>Correlation ID middleware</strong> to trace requests across sync and async service boundaries, streamlining root-cause analysis for complex distributed errors.
 									</li>
-									<li>Developed comprehensive <strong>CI/CD pipelines</strong> with multi-stage Docker
-										builds, environment-specific configuration, and automated deployments to Azure
-										Container Apps for zero-downtime operations.</li>
+									<li>Containerized services with <strong>multi-stage Docker builds (~250MB images)</strong> and orchestrated <strong>zero-downtime deployments on Azure</strong>; optimized serverless SQL infrastructure to sustain a production environment for <strong>&lt;$21/month</strong>.</li>
 								</ol>
 							</div>
 
@@ -107,7 +98,7 @@
 									<li><a class="icon solid fa-hammer">
 											<span class="label"></span></a></li>
 									<span><strong>.NET 8, Razor, Azure Container Apps, Azure Service Bus, Azure SQL,
-											Docker, JWT/Identity</strong></span>
+											Docker, JWT/Identity, Redis, Seq, Jaeger</strong></span>
 								</ul>
 
 							</div>
@@ -119,7 +110,7 @@
 							<h3><strong>Architecture Diagram</strong></h3>
 							<br>
 							<span class="image center">
-								<span class="image fit"><img src="images/Ecommerce-Project-1.svg" alt="Azure Resource Group Architecture" /></span>
+								<span class="image fit"><img src="images/Ecommerce-Project-2.svg" alt="Azure Resource Group Architecture" /></span>
 							</span>
 						</section> 
 
@@ -145,7 +136,7 @@
 									hours on.</p>
 
 								<p>This project will keep growing in phases. If you have ideas or want to suggest
-									improvements, feel free to open a GitHub issue.</p>
+									improvements, feel free to <a href="https://github.com/zahran001/E-commerce/issues" target="_blank">open a GitHub issue</a>.</p>
 							</span>
 
 							<br /><br />
