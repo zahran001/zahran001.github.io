@@ -1916,6 +1916,58 @@ input, select, textarea {
 				min-width: 0;
 			}
 
+			input[type="submit"].large,
+			input[type="reset"].large,
+			input[type="button"].large,
+			button.large,
+			.button.large {
+				font-size: 1em;
+				padding: 0.75em 1.5em;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			ul.actions {
+				margin-left: 0;
+				text-align: center;
+			}
+
+			ul.actions li {
+				padding: 0.75em 0 0 0;
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+
+			ul.actions li:first-child {
+				padding-top: 0;
+			}
+
+			input[type="submit"].large,
+			input[type="reset"].large,
+			input[type="button"].large,
+			button.large,
+			.button.large {
+				font-size: 0.9em;
+				width: auto;
+				max-width: 90%;
+				padding: 0.75em 1.5em;
+				display: inline-block;
+				text-align: center;
+				height: auto;
+				line-height: normal;
+				white-space: normal;
+				min-width: auto;
+			}
+
+			.button.large strong,
+			button.large strong {
+				display: block;
+				text-align: center;
+			}
+
 		}
 
 	input[type="submit"],
