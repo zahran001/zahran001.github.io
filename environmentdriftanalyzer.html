@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>my projects</title>
+	<link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>Environment Drift Analyzer</h1>
+			<p>Detect and explain behavioral differences across application environments with AI-powered insights</p>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html"><strong>Zahran Yahia Khan</a></strong> &emsp; &emsp;</li>
+				<li><a href="aboutme.html">About me</a></li>
+				<li><a href="projects.html">My projects</a></li>
+				<li><a href="more.html">More</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Content -->
+			<section id="content" class="main">
+
+				<!-- projects -->
+
+				<section id="first" class="main special">
+
+					<!-- Lists -->
+					<section>
+
+						<!-- Description -->
+
+						<h2><strong>Description</strong></h2>
+						<p>
+							In real-world systems, the same application often behaves differently across environments. Local development rarely reflects production reality. As applications move through staging, beta, and production, they accumulate additional layers of security, networking, and policy enforcement. These differences frequently result in unexpected latency, failed requests, or production-only bugs that are difficult to diagnose quickly.
+						</p>
+						<p>
+							While developers can manually investigate these issues using browser tools, logs, and metrics, doing so requires fragmented context and prior knowledge of what to look for. Environment Drift Analyzer solves this by providing an automated AI agent that identifies why application behavior differs across environments and explains the root causes in digestible terms.
+						</p>
+
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<h2><strong>Features</strong></h2>
+								<ol>
+									<li>Designed an <strong>edge-native system</strong> to detect and explain behavioral drift between application environments using <strong>deterministic diffing</strong> combined with <strong>LLM-generated, schema-validated explanations</strong>.
+									</li>
+									<li>Architected a <strong>contract-first pipeline</strong> with normalized observable signals, <strong>idempotent workflow orchestration</strong>, and <strong>SQLite-backed Durable Objects</strong> for persistent, bounded historical memory across deploys.
+									</li>
+									<li>Implemented <strong>manual redirect probing, header whitelisting, SSRF safeguards</strong>, and <strong>retry-safe workflows</strong> to ensure correctness under edge execution constraints and strict network policies.
+									</li>
+								</ol>
+							</div>
+
+							<div class="col-6 col-12-medium">
+
+								<h2><strong>Info</strong></h2>
+
+								<ul class="icons">
+
+									<li><a href="https://github.com/zahran001/cf_ai_env_drift_analyzer" class="icon solid fa-code"
+											target="_blank">
+											<span class="label"></span></a></li>
+									<a href="https://github.com/zahran001/cf_ai_env_drift_analyzer" target="_blank">source code</a>
+									<br>
+									<br>
+									<li><a class="icon solid fa-hammer">
+											<span class="label"></span></a></li>
+									<span><strong>Cloudflare (Workers, Workflows, Durable Objects, Pages), SQLite, Llama 3.3, TypeScript, Zod</strong></span>
+								</ul>
+
+							</div>
+						</div>
+
+
+						<!-- Implementation Highlights -->
+						<!-- <section>
+							<h3><strong>Implementation Highlights</strong></h3>
+							<br>
+							<p><strong>Deterministic Diffing & Schema Validation</strong></p>
+							<span class="image center">
+								<span class="image fit"><img src="images/drift1.png" alt="Deterministic diffing and schema validation" /></span>
+							</span>
+							<br>
+							<p><strong>Edge-Native Workflow Orchestration</strong></p>
+							<span class="image center">
+								<span class="image fit"><img src="images/drift2.png" alt="Edge-native workflow orchestration" /></span>
+							</span>
+							<br>
+							<p><strong>AI-Generated Drift Explanations</strong></p>
+							<span class="image center">
+								<span class="image fit"><img src="images/drift3.png" alt="AI-generated explanations of behavioral drift" /></span>
+							</span>
+						</section> -->
+
+						<!-- Engineering Reflection -->
+						<!-- <section>
+							<h3><strong>Engineering Reflection</strong></h3>
+
+							<p>
+								This project pushed me to think about reliability at the edge. Cloudflare Workers execute in a constrained environment with unique limitations—no direct file system access, strict isolation, network boundaries. Rather than fighting these constraints, I designed the entire system around them: idempotent workflows that can survive retries, deterministic logic that produces consistent results regardless of execution context, and bounded history stored in Durable Objects so drift detection remains fast even as environments are probed repeatedly.
+							</p>
+
+							<p>
+								The diffing algorithm is intentionally simple—comparing observable signals like response headers, status codes, and redirect chains. But simplicity here is a feature: it makes the comparison deterministic, reproducible, and suitable for schema validation. The LLM then contextualizes these differences with actual explanations a developer can act on.
+							</p>
+
+							<span id="additional-reflection" style="display: none;">
+								<p>
+									One of the hardest parts was designing for safety under edge execution. SSRF attacks are real when you're making HTTP requests on behalf of users. I implemented strict header whitelisting, URL validation, and rate limiting to ensure the agent can't be weaponized for scanning internal networks or bypassing security policies.
+								</p>
+
+								<p>
+									The project continues to evolve. Right now it handles HTTP/HTTPS behavior, but I'm exploring how to extend it to database-level drift detection and multi-region latency analysis.
+								</p>
+							</span>
+
+							<br /><br />
+							<a href="#" id="toggle-reflection"
+								style="color: #8cc9f0; text-decoration: none; cursor: pointer;">
+								Read more ▼
+							</a>
+
+						</section> -->
+
+					</section>
+
+		</div>
+
+		<!-- Reflection toggle script -->
+		<script>
+			(function () {
+				// Wait for DOM to be ready
+				var toggleBtn = document.getElementById('toggle-reflection');
+				var additionalReflection = document.getElementById('additional-reflection');
+
+				if (toggleBtn && additionalReflection) {
+					toggleBtn.addEventListener('click', function (e) {
+						e.preventDefault();
+
+						if (additionalReflection.style.display === 'none') {
+							additionalReflection.style.display = 'inline';
+							toggleBtn.innerHTML = 'Read less ▲';
+						} else {
+							additionalReflection.style.display = 'none';
+							toggleBtn.innerHTML = 'Read more ▼';
+						}
+					});
+				}
+			})();
+		</script>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<h2>connect with me!</h2>
+			<dl class="alt">
+				<dt>located</dt>
+				<dd>Tampa, FL &bull; United States</dd>
+				<dt>email</dt>
+				<dd><a href="#">zykkhan.bd@gmail.com</a></dd>
+			</dl>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank"
+						class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+				<li><a href="https://github.com/zahran001" target="_blank" class="icon brands fa-github alt"><span
+							class="label">GitHub</span></a></li>
+			</ul>
+			</section>
+			<p class="copyright">&copy; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
