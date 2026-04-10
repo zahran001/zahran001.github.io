@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>my projects</title>
+		<link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Design-MCP</h1>
+						<p>Spec-Driven Component Generator for RAG Systems</p>
+					</header>
+
+					<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html"><strong>Zahran Yahia Khan</a></strong> &emsp; &emsp;</li>
+						<li><a href="aboutme.html">About me</a></li>
+						<li><a href="projects.html">My projects</a></li>
+						<li><a href="more.html">More</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+
+								<!-- projects -->
+
+								<section id="first" class="main special">
+
+
+								<!-- Lists -->
+									<section>
+
+										<!-- Description -->
+										<h2><strong>Description</strong></h2>
+										<p>Design-MCP is a TypeScript CLI pipeline that crawls design system documentation (starting with <strong>Chakra UI</strong>), extracts structured component specifications, and transforms them into semantic chunks optimized for <strong>RAG (Retrieval-Augmented Generation)</strong> systems.
+
+										<br>
+										<br>
+										The tool automates what would otherwise be a tedious manual process: gathering component props, code examples, and accessibility notes from documentation sites, then normalizing that data into machine-readable formats suitable for vector search and AI-powered component generation.
+										</p>
+
+										<!-- Pipeline Architecture -->
+										<h2><strong>Pipeline Architecture</strong></h2>
+										<p>
+											<strong>Step 0: Extract</strong> &rarr; <strong>Step 1: Normalize</strong> &rarr; <em>Step 2: Embed</em> &rarr; <em>Step 3: Search</em>
+											<br>
+											<small>(Steps 0 &amp; 1 implemented &bull; Steps 2 &amp; 3 in progress)</small>
+										</p>
+
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<h2><strong>Features</strong></h2>
+												<ol>
+													<li>
+														Built a <strong>Playwright-based web crawler</strong> that discovers and navigates design system documentation pages, extracting structured component data (props, code examples, accessibility notes) with schema validation on every artifact via Zod.
+													</li>
+													<li>
+														Implemented a <strong>multi-stage normalization pipeline</strong> with an inference engine (code analyzer, section inferrer, intent classifier with 14 intent classes) that transforms raw extractions into semantic chunks with natural language explanations.
+													</li>
+													<li>
+														Designed a <strong>composition-scored code filtering</strong> system that surfaces meaningful usage patterns while filtering out boilerplate, paired with column-order-agnostic props table parsing for robust extraction across varying doc layouts.
+													</li>
+													<li>
+														Engineered <strong>resilient error handling</strong> with a success/failure union return type and automatic fallback chunk generation, plus JSONL metrics tracking for monitoring transformation quality across components.
+													</li>
+												</ol>
+											</div>
+
+											<div class="col-6 col-12-medium">
+
+												<h2><strong>Info</strong></h2>
+
+												<ul class="icons">
+
+													<li><a href="https://github.com/zahran001/Design-MCP" class="icon solid fa-code"  target="_blank">
+														<span class="label"></span></a></li>
+													<a href="https://github.com/zahran001/Design-MCP" target="_blank">source code</a>
+													<br>
+													<br>
+													<li><a class="icon solid fa-hammer">
+														<span class="label"></span></a></li>
+													<span><strong>TypeScript, Node.js, Playwright, Commander.js, Zod, Docker</strong></span>
+													<br>
+													<br>
+													<li><a class="icon solid fa-tasks">
+														<span class="label"></span></a></li>
+													<span><strong>Status:</strong> In Progress &mdash; Extraction &amp; normalization complete, embedding &amp; retrieval next</span>
+												</ul>
+
+											</div>
+										</div>
+
+
+								<!-- Screenshots -->
+									<section>
+										<!-- <h3><strong>Demo</strong></h3> -->
+										<!-- <span class="image center">
+											<span class="image fit"><img src="images/designmcp1.png" alt="" /></span>
+										</span> -->
+										<!-- <span class="image center">
+											<span class="image fit"><img src="images/designmcp2.png" alt="" /></span>
+										</span> -->
+										<!-- <span class="image center">
+											<span class="image fit"><img src="images/designmcp3.png" alt="" /></span>
+										</span> -->
+									</section>
+
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+
+						<h2>connect with me!</h2>
+						<dl class="alt">
+							<dt>located</dt>
+							<dd>Tampa, FL &bull; United States</dd>
+							<dt>email</dt>
+							<dd><a href="#">zykkhan.bd@gmail.com</a></dd>
+						</dl>
+						<ul class="icons">
+							<li><a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/zahran001" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+					<p class="copyright">&copy; Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
