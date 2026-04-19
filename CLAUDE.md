@@ -84,7 +84,7 @@ zahran001.github.io/
 
 1. **[aboutme.html](aboutme.html)** - Experience & Education
    - Work experience section (Rocket Mortgage internships, TA roles)
-   - Education section (Wayne State University)
+   - Education section (University of South Florida)
    - Tech stack lists
    - **MOST FREQUENTLY UPDATED** - add new roles, skills, education changes here
 
@@ -470,6 +470,7 @@ When assisting with this project:
 8. **Prioritize performance** (optimize images, minimize dependencies)
 9. **Focus on content updates** rather than structural changes (stability matters)
 10. **Always provide file paths** as markdown links: [filename.html](path/to/filename.html)
+11. **After research or planning, always state what you're about to change** — before making edits, briefly list the files and specific changes you'll make
 
 **Most Valuable Assistance:**
 - Updating aboutme.html with new experience/education/skills
