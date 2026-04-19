@@ -3836,3 +3836,12 @@ input, select, textarea {
 			}
 
 		}
+
+	/* Earlier Work Toggle Section */
+	.earlier-work-hidden {
+		display: none;
+	}
+
+	.earlier-work-hidden.show {
+		display: block;
+	}

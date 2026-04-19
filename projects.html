@@ -89,55 +89,6 @@
 											</p>
 										</li>
 
-										<!-- bookatour -->
-										<li>
-											<span class="icon major style1 solid fa-walking"></span>
-											<ul class="actions">
-												<li><a href="bookatour.html" class="button large">BookATour</a></li>
-											</ul>
-											<p>
-												A web application that empowers users to personalize their campus tour
-											</p>
-										</li>
-
-										<!-- project_showcase -->
-										<li>
-											<span class="icon major style2 solid fa-search"></span>
-											<ul class="actions">
-												<li><a href="project_showcase.html" class="button large">Project Showcase</a></li>
-											</ul>
-											<p>
-												A Flask app for users to build personalized portfolios without dealing with repetitive coding
-											</p>
-										</li>
-
-										<!-- noteshare -->
-										<li>
-											<span class="icon major style3 solid fa-sticky-note"></span>
-											<ul class="actions">
-												<li><a href="notemart.html" class="button large">NoteMart</a></li>
-											</ul>
-											<p>A platform for social networking focused on sharing notes</p>
-										</li>
-
-										<!-- attendance_sheet -->
-										<li>
-											<span class="icon major style4 solid fa-table"></span>
-											<ul class="actions">
-												<li><a href="attendance.html" class="button large">Attendance sheet</a></li>
-											</ul>
-											<p>An application to extract student ID numbers from PDFs and transfer them to an Excel sheet</p>
-										</li>
-
-										<!-- line_follower_robot -->
-										<li>
-											<span class="icon major style4 solid fa-road"></span>
-											<ul class="actions">
-												<li><a href="lineFollowerRobot.html" class="button large">Line Follower Robot</a></li>
-											</ul>
-											<p>A line follower robot combining sensors, control algorithms, and motor adjustments</p>
-										</li>
-
 										<!-- leetcode -->
 										<li>
 											<span class="icon major style5 solid fa-code"></span>
@@ -156,6 +107,68 @@
 											<p>Large-scale system architecture, trade-off analysis, and design patterns for distributed systems</p>
 										</li>
 									</ul>
+
+									<!-- Earlier Work Toggle Button -->
+									<footer class="major" style="margin-top: 2em;">
+										<ul class="actions special">
+											<li><button id="toggle-earlier-work" class="button">Earlier Work</button></li>
+										</ul>
+									</footer>
+
+									<!-- Earlier Work Section (Hidden by Default) -->
+									<div id="earlier-work" class="earlier-work-hidden">
+										<ul class="features" style="margin-top: 2em;">
+											<!-- bookatour -->
+											<li>
+												<span class="icon major style1 solid fa-walking"></span>
+												<ul class="actions">
+													<li><a href="bookatour.html" class="button large">BookATour</a></li>
+												</ul>
+												<p>
+													A web application that empowers users to personalize their campus tour
+												</p>
+											</li>
+
+											<!-- project_showcase -->
+											<li>
+												<span class="icon major style2 solid fa-search"></span>
+												<ul class="actions">
+													<li><a href="project_showcase.html" class="button large">Project Showcase</a></li>
+												</ul>
+												<p>
+													A Flask app for users to build personalized portfolios without dealing with repetitive coding
+												</p>
+											</li>
+
+											<!-- noteshare -->
+											<li>
+												<span class="icon major style3 solid fa-sticky-note"></span>
+												<ul class="actions">
+													<li><a href="notemart.html" class="button large">NoteMart</a></li>
+												</ul>
+												<p>A platform for social networking focused on sharing notes</p>
+											</li>
+
+											<!-- attendance_sheet -->
+											<li>
+												<span class="icon major style4 solid fa-table"></span>
+												<ul class="actions">
+													<li><a href="attendance.html" class="button large">Attendance sheet</a></li>
+												</ul>
+												<p>An application to extract student ID numbers from PDFs and transfer them to an Excel sheet</p>
+											</li>
+
+											<!-- line_follower_robot -->
+											<li>
+												<span class="icon major style4 solid fa-road"></span>
+												<ul class="actions">
+													<li><a href="lineFollowerRobot.html" class="button large">Line Follower Robot</a></li>
+												</ul>
+												<p>A line follower robot combining sensors, control algorithms, and motor adjustments</p>
+											</li>
+										</ul>
+									</div>
+
 							</section>
 
 					</div>
@@ -167,12 +180,12 @@
 						<dl class="alt">
 							<dt>located</dt>
 							<dd>Tampa, FL &bull; United States</dd>
-							
+
 							<dt>email</dt>
 							<dd><a href="#">zykkhan.bd@gmail.com</a></dd>
 						</dl>
 						<ul class="icons">
-							
+
 							<li><a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
 							<li><a href="https://github.com/zahran001" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
 						</ul>
@@ -190,6 +203,23 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Earlier Work Toggle Script -->
+			<script>
+				document.getElementById('toggle-earlier-work').addEventListener('click', function() {
+					var earlierWork = document.getElementById('earlier-work');
+					var button = document.getElementById('toggle-earlier-work');
+
+					earlierWork.classList.toggle('earlier-work-hidden');
+
+					// Change button text based on state
+					if (earlierWork.classList.contains('earlier-work-hidden')) {
+						button.textContent = 'Earlier Work';
+					} else {
+						button.textContent = 'Hide Earlier Work';
+					}
+				});
+			</script>
 
 	</body>
 </html>
