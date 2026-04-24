@@ -61,6 +61,8 @@
 							The project is built around <strong>mechanical sympathy</strong>: writing code that respects how the CPU physically moves data from RAM to registers. Using <strong>Coreinfo64</strong> and <strong>CPU-Z</strong> to characterize the hardware first (cache hierarchy, DRAM bandwidth ceiling, SIMD support), then shaping every allocation, loop, and prefetch hint around those constraints. With AVX2's 256-bit YMM registers, a single <code>_mm256_andnot_si256</code> instruction intersects two segments across <strong>256 users per clock cycle</strong>.
 						</p>
 
+						<span class="image fit"><img src="images/roofline.svg" alt="Roofline model performance analysis" /></span>
+
 						<div class="row">
 							<div class="col-6 col-12-medium">
 								<h2><strong>Features</strong></h2>
