@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>MarkLLM Survey</title>
+	<link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<h1>MarkLLM Survey</h1>
+			<p>Evaluating LLM Watermarking Robustness Across Model Scales</p>
+		</header>
+
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="index.html"><strong>Zahran Yahia Khan</a></strong> &emsp; &emsp;</li>
+				<li><a href="aboutme.html">About me</a></li>
+				<li><a href="projects.html">My projects</a></li>
+				<li><a href="more.html">More</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+
+			<section id="content" class="main">
+
+				<section id="first" class="main special">
+
+					<section>
+
+						<!-- Description -->
+						<h2><strong>Description</strong></h2>
+						<p>
+							As LLMs become capable of generating fluent, convincing text at scale, distinguishing AI-generated content from human writing becomes a critical problem. Post-hoc classifiers are fragile and easy to evade; <strong>watermarking</strong> offers a structural alternative by embedding a detectable statistical signal directly into the generation process. Several algorithms exist, but most evaluations benchmark a single model size — leaving a key deployment question unanswered: <em>does watermarking effectiveness hold up as model scale changes, and does the answer differ by algorithm?</em>
+						</p>
+						<p>
+							This study uses the <strong>MarkLLM framework</strong> to conduct the first systematic cross-scale, cross-algorithm watermarking benchmark. We evaluated three algorithms — <strong>KGW</strong> (context-dependent logit biasing), <strong>Unigram</strong> (fixed global green list), and <strong>EXP</strong> (sampling-based) — across three OPT model sizes (125M, 1.3B, 2.7B), two datasets (C4 and WMT16), and three adversarial attacks (word deletion, synonym substitution, GPT-3.5 paraphrasing), generating 3,600 texts in total.
+						</p>
+
+						<div class="row">
+							<div class="col-6 col-12-medium">
+								<h2><strong>Key Findings</strong></h2>
+								<ol>
+									<li>
+										The <strong>scale-floor problem is algorithm-specific</strong>: KGW fails entirely on OPT-125M (TPR @ 10% FPR = 0.09) due to its reliance on context-dependent logit biasing at low-entropy positions, while Unigram and EXP achieve near-perfect detection (TPR ≥ 0.95) even at that scale. Deployers using small models should not assume scale constraints are shared across algorithms.
+									</li>
+									<li>
+										<strong>GPT-3.5 paraphrasing is catastrophically more damaging</strong> than surface attacks — average TPR drop of 57.6 pp vs. 6.2 pp for word deletion. Both KGW and EXP share prefix-context dependence that paraphrasing fully exploits. Unigram's fixed global green list is immune to this mechanism, retaining TPR = 0.92 on C4 + OPT-2.7B even after full rewriting.
+									</li>
+									<li>
+										<strong>Detectability plateaus above OPT-125M</strong>: OPT-1.3B and OPT-2.7B produce virtually identical TPR across all three algorithms, indicating watermark signal strength is bounded by the embedding mechanism, not model capacity. Scaling up provides no detectability benefit once above the minimum viable threshold.
+									</li>
+								</ol>
+							</div>
+
+							<div class="col-6 col-12-medium">
+								<h2><strong>Info</strong></h2>
+
+								<ul class="icons">
+									<li><a href="https://zahran001.github.io/MarkLLM-Survey/" class="icon solid fa-chart-bar" target="_blank">
+											<span class="label"></span></a></li>
+									<a href="https://zahran001.github.io/MarkLLM-Survey/" target="_blank">results &amp; analysis</a>
+									<br>
+									<br>
+									<li><a href="https://github.com/zahran001/MarkLLM-Survey" class="icon solid fa-code" target="_blank">
+											<span class="label"></span></a></li>
+									<a href="https://github.com/zahran001/MarkLLM-Survey" target="_blank">source code</a>
+									<br>
+									<br>
+									<li><a class="icon solid fa-hammer">
+											<span class="label"></span></a></li>
+									<span><strong>Python, MarkLLM, OPT (125M / 1.3B / 2.7B), BERT-large, GPT-3.5 API, Google Colab (T4 GPU)</strong></span>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Figures -->
+						<section>
+							<h3><strong>Results</strong></h3>
+
+							<h4>Detectability Across Model Scales</h4>
+							<p>KGW collapses to near-chance detection on OPT-125M while Unigram and EXP maintain near-perfect TPR at every scale. Above 125M, all three algorithms plateau — additional capacity provides no watermark signal benefit.</p>
+							<span class="image fit">
+								<img src="https://zahran001.github.io/MarkLLM-Survey/assets/detectability-1.png" alt="Detectability across model scales: TPR @ 10% FPR for KGW, Unigram, and EXP on OPT-125M, 1.3B, and 2.7B" />
+							</span>
+
+							<br>
+
+							<h4>Surviving Detection After GPT-3.5 Paraphrasing</h4>
+							<p>Unigram dominates post-paraphrase survival across all model–dataset combinations. KGW and EXP drop to the 0.15–0.48 range while Unigram retains up to 0.92 on C4 — the difference between a usable and unusable watermark under adversarial conditions.</p>
+							<span class="image fit">
+								<img src="https://zahran001.github.io/MarkLLM-Survey/assets/paraphrase-1.png" alt="Surviving detection after GPT-3.5 paraphrasing: Unigram dominates across all model-dataset combinations" />
+							</span>
+						</section>
+
+					</section>
+
+				</section>
+
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+
+			<h2>connect with me!</h2>
+			<dl class="alt">
+				<dt>located</dt>
+				<dd>Tampa, FL &bull; United States</dd>
+				<dt>email</dt>
+				<dd><a href="#">zykkhan.bd@gmail.com</a></dd>
+			</dl>
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank" class="icon brands fa-linkedin alt"><span class="label">LinkedIn</span></a></li>
+				<li><a href="https://github.com/zahran001" target="_blank" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+			</ul>
+			</section>
+			<p class="copyright">&copy; 2026 Zahran Yahia Khan.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
