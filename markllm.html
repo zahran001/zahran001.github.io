@@ -59,17 +59,17 @@
 						<div class="row">
 							<div class="col-6 col-12-medium">
 								<h2><strong>Key Findings</strong></h2>
-								<ol>
+								<ul>
 									<li>
-										The <strong>scale-floor problem is algorithm-specific</strong>: KGW fails entirely on OPT-125M (TPR @ 10% FPR = 0.09) due to its reliance on context-dependent logit biasing at low-entropy positions, while Unigram and EXP achieve near-perfect detection (TPR ≥ 0.95) even at that scale. Deployers using small models should not assume scale constraints are shared across algorithms.
+										<strong>Watermark reliability on small models is algorithm-specific:</strong> KGW fails on OPT-125M while Unigram and EXP maintain near-perfect detection.
 									</li>
 									<li>
-										<strong>GPT-3.5 paraphrasing is catastrophically more damaging</strong> than surface attacks — average TPR drop of 57.6 pp vs. 6.2 pp for word deletion. Both KGW and EXP share prefix-context dependence that paraphrasing fully exploits. Unigram's fixed global green list is immune to this mechanism, retaining TPR = 0.92 on C4 + OPT-2.7B even after full rewriting.
+										<strong>GPT-3.5 paraphrasing is the dominant attack vector,</strong> causing substantially larger detection degradation than lexical attacks.
 									</li>
 									<li>
-										<strong>Detectability plateaus above OPT-125M</strong>: OPT-1.3B and OPT-2.7B produce virtually identical TPR across all three algorithms, indicating watermark signal strength is bounded by the embedding mechanism, not model capacity. Scaling up provides no detectability benefit once above the minimum viable threshold.
+										<strong>Unigram achieved the strongest practical robustness</strong> under adversarial rewriting. It also showed no perplexity increase, but this isn't a fluency win: GPT-2 happens to favor the same tokens Unigram's green list promotes, so the scorer rewards watermarked text for reasons unrelated to actual output quality.
 									</li>
-								</ol>
+								</ul>
 							</div>
 
 							<div class="col-6 col-12-medium">
