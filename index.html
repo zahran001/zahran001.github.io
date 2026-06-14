@@ -218,5 +218,38 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<!-- Performance timing audit (remove when done measuring) -->
+			<script>
+				window.addEventListener('load', () => {
+					setTimeout(() => {
+						const nav = performance.getEntriesByType('navigation')[0];
+						if (!nav) return;
+
+						console.group('%cDocument timing', 'font-weight:bold');
+						console.log('DNS lookup:      ', (nav.domainLookupEnd - nav.domainLookupStart).toFixed(1), 'ms');
+						console.log('TCP connect:     ', (nav.connectEnd - nav.connectStart).toFixed(1), 'ms');
+						console.log('TLS handshake:   ', (nav.connectEnd - nav.secureConnectionStart).toFixed(1), 'ms');
+						console.log('TTFB:            ', (nav.responseStart - nav.requestStart).toFixed(1), 'ms');
+						console.log('Response download:', (nav.responseEnd - nav.responseStart).toFixed(1), 'ms');
+						console.log('DOM processing:  ', (nav.domComplete - nav.domInteractive).toFixed(1), 'ms');
+						console.log('Total load:      ', nav.loadEventEnd.toFixed(1), 'ms');
+						console.groupEnd();
+
+						const resources = performance.getEntriesByType('resource')
+							.map(r => ({
+								name: r.name.split('/').pop(),
+								type: r.initiatorType,
+								duration: +r.duration.toFixed(1),
+								size_KB: r.transferSize ? +(r.transferSize / 1024).toFixed(1) : 'cached'
+							}))
+							.sort((a, b) => b.duration - a.duration);
+
+						console.group('%cSlowest resources', 'font-weight:bold');
+						console.table(resources.slice(0, 15));
+						console.groupEnd();
+					}, 0);
+				});
+			</script>
+
 	</body>
 </html>
