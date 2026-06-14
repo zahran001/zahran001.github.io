@@ -3948,7 +3948,7 @@ input, select, textarea {
 
 	.proj-tag {
 		font-size: 0.65em;
-		font-weight: 600;
+		font-weight: 400;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: #999999;
@@ -3957,7 +3957,7 @@ input, select, textarea {
 
 	.proj-body h3 {
 		font-size: 1.05em;
-		font-weight: 600;
+		font-weight: 400;
 		color: #444444;
 		margin: 0.1em 0 0;
 		line-height: 1.25;
@@ -3975,7 +3975,7 @@ input, select, textarea {
 		display: inline-block;
 		margin-top: 0.6em;
 		font-size: 0.7em;
-		font-weight: 600;
+		font-weight: 400;
 		color: #935d8c;           /* matches body background accent — ties the card to the site palette */
 		border-left: 2px solid #935d8c;
 		padding-left: 0.5em;
