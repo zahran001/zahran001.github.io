@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(gh repo:*)",
-      "Bash(grep -n \"background\\\\|#[0-9a-fA-F]\\\\{3,6\\\\}\" /c/Users/minha/OneDrive/Desktop/portfolio/zahran001.github.io/assets/css/main.css)"
-    ]
-  }
-}
