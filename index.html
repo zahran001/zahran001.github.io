@@ -25,6 +25,7 @@
 		<meta name="twitter:image" content="https://zahran001.github.io/images/profile.jpg" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script>document.documentElement.className += ' js-reveal';</script>
 	</head>
 	<body class="is-preload">
 		
@@ -37,7 +38,7 @@
 						<div style="display: flex; flex-direction: column; align-items: center; padding: 0 0 0.8em 0;">
 							<picture>
 								<source srcset="images/profile.webp" type="image/webp" />
-								<img src="images/profile.jpg" alt="Zahran Yahia Khan" width="240" height="240" style="width: 240px; height: 240px; border-radius: 50%; margin-bottom: 0.4em; object-fit: cover;" />
+								<img src="images/profile.jpg" alt="Zahran Yahia Khan" width="200" height="200" style="width: 200px; height: 200px; border-radius: 50%; margin-bottom: 0.4em; object-fit: cover;" />
 							</picture>
 							<h1 style="margin: 0.3em 0;">Zahran Yahia Khan</h1>
 							<p style="margin: 0.2em 0; font-size: 1.5em;">Software Engineer · Backend, Distributed Systems & Cloud</p>
@@ -49,15 +50,9 @@
 								<li><a href="https://www.linkedin.com/in/zahran-yahia/" target="_blank" class="button">LinkedIn</a></li>
 								<li><a href="https://github.com/zahran001" target="_blank" class="button">GitHub</a></li>
 							</ul>
-							<div class="proof">
-								<p class="proof-companies">Software Engineer Intern ×2 @ <strong>Rocket Mortgage</strong> · Database Developer @ VS One World</p>
-								<div class="proof-stats">
-									<div class="proof-stat"><span class="num">~$246M</span><span class="label">Loan volume unlocked</span></div>
-									<div class="proof-stat"><span class="num">~80%</span><span class="label">Fewer support tickets</span></div>
-									<div class="proof-stat"><span class="num">~50%</span><span class="label">Faster deployments</span></div>
-								</div>
-								<p class="proof-stack">C# · .NET 8 · C++ · Python · Go · Kubernetes · AWS · Angular · React</p>
-							</div>
+							<a href="#aboutme" class="scroll-cue scrolly" aria-label="Scroll to about section">
+								<span class="icon solid fa-angle-down"></span>
+							</a>
 						</div>
 					</header>
 
@@ -66,6 +61,7 @@
 					<ul>
 						<li><a href="index.html"><strong>Zahran Yahia Khan</a></strong> &emsp; &emsp;</li>
 						<li><a href="#aboutme" class="active">About me</a></li>
+						<li><a href="#experience">Experience</a></li>
 						<li><a href="#projects">My projects</a></li>
 						<li><a href="more.html">More</a></li>
 					</ul>
@@ -77,7 +73,7 @@
 						<!-- Introduction -->
 							<section id="aboutme" class="main">
 								<div class="spotlight">
-									<div class="content">
+									<div class="content reveal">
 										<header class="major">
 											<h2>About</h2>
 										</header>
@@ -85,14 +81,100 @@
 											I'm a CS senior at the University of South Florida building distributed systems and cloud infrastructure — Kubernetes, microservices, and high-throughput backends. Over two summers at Rocket Mortgage I shipped production multi-agent systems and cut latency, deploy time, and support load. Lately I've been exploring compiler optimizations (SIMD), high-performance computing, and AI/ML systems.
 										</p>
 										<ul class="actions">
-											<li><a href="aboutme.html" class="button" style="border:2px solid #B485F3"><strong>Education & Experience</strong></a></li>
+											<li><a href="aboutme.html" class="button" style="border:2px solid #B485F3"><strong>More about me</strong></a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/zyk_image.webp" alt="Zahran Yahia Khan" /></span>
+									<span class="image reveal"><img src="images/zyk_image.webp" alt="Zahran Yahia Khan" /></span>
 								</div>
 							</section>
 
-						<!-- First Section -->
+						<!-- Experience -->
+								<section id="experience" class="main">
+									<header class="major">
+										<h2><strong>Experience</strong></h2>
+									</header>
+
+									<div class="impact-stats reveal">
+										<div class="impact-stat"><span class="num">~$246M</span><span class="label">Loan volume unlocked</span></div>
+										<div class="impact-stat"><span class="num">~80%</span><span class="label">Fewer support tickets</span></div>
+										<div class="impact-stat"><span class="num">~50%</span><span class="label">Faster deployments</span></div>
+										<div class="impact-stat"><span class="num">100+</span><span class="label">Concurrent agent sessions</span></div>
+									</div>
+
+									<div class="exp-list">
+										<div class="exp-card reveal">
+											<div class="exp-head">
+												<div>
+													<h3 class="exp-role">Software Engineer Intern</h3>
+													<span class="exp-co"><strong>Rocket Mortgage</strong> · Detroit, MI</span>
+												</div>
+												<span class="exp-date">May – Aug 2025</span>
+											</div>
+											<ul>
+												<li>Migrated microservices from <strong>AWS ECS</strong> to <strong>EKS</strong> with <strong>Istio</strong>, enforcing Zero Trust networking via default-deny policies and <strong>mTLS</strong> — improving deployment speed <strong>~50%</strong> and cutting API latency <strong>~33%</strong>.</li>
+												<li>Engineered a distributed <strong>multi-agent</strong> mortgage-processing system (<strong>Google A2A</strong>, <strong>Gemini</strong>, <strong>Anthropic MCP</strong>) with runtime auto-discovery of agents and tools, cutting query latency <strong>~40%</strong> across <strong>100+</strong> concurrent sessions.</li>
+												<li>Built <strong>.NET 8</strong> / <strong>Angular</strong> self-service features with full-stack validation, reducing support requests <strong>~80%</strong> and unlocking <strong>~$246M</strong> in addressable loan volume.</li>
+											</ul>
+										</div>
+
+										<div class="exp-card reveal">
+											<div class="exp-head">
+												<div>
+													<h3 class="exp-role">Software Engineer Intern</h3>
+													<span class="exp-co"><strong>Rocket Mortgage</strong> · Detroit, MI</span>
+												</div>
+												<span class="exp-date">May – Aug 2024</span>
+											</div>
+											<ul>
+												<li>Owned end-to-end data-contract mapping across the <strong>Angular</strong> UI and <strong>.NET</strong> backend for high-velocity refinance flows, eliminating systemic rate-lock qualification failures behind recurring severity tickets.</li>
+												<li>Migrated <strong>100+</strong> API collections to <strong>Bruno</strong> to mitigate Postman cloud-shift risk; rewrote <strong>CircleCI</strong> pipelines with Bruno CLI and <strong>Docker</strong> to catch bugs pre-production and cut rollbacks.</li>
+												<li>Overhauled the <strong>Rancher</strong> local dev environment, cutting setup from <strong>4 days to 1</strong> and enabling local <strong>E2E testing</strong> with beta-pointing for hotfix validation.</li>
+											</ul>
+										</div>
+
+										<div class="exp-card reveal">
+											<div class="exp-head">
+												<div>
+													<h3 class="exp-role">Database Developer Intern</h3>
+													<span class="exp-co"><strong>VS One World</strong> · Dhaka, Bangladesh</span>
+												</div>
+												<span class="exp-date">May – Jul 2023</span>
+											</div>
+											<ul>
+												<li>Designed and implemented database structures in <strong>MSSQL</strong> and improved performance by optimizing <strong>T-SQL</strong> queries.</li>
+												<li>Integrated <strong>Crystal Reports</strong> with MSSQL and delivered parameterized reports across <strong>8</strong> user-specific customization requests.</li>
+												<li>Documented and maintained <strong>3</strong> entity-relationship diagrams for team reference and collaboration.</li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="exp-meta-row">
+										<div class="exp-card skills-card reveal">
+											<h3 class="exp-role">Technical Skills</h3>
+											<dl class="skills">
+												<dt>Languages</dt>
+												<dd>C#, C/C++, Python, Java, Go, TypeScript/JavaScript, SQL</dd>
+												<dt>Frameworks</dt>
+												<dd>.NET 8/ASP.NET Core, Angular, React, Node.js/Express</dd>
+												<dt>Cloud &amp; DevOps</dt>
+												<dd>AWS, Kubernetes, Terraform, Docker, Rancher, GitHub Actions/CircleCI, OpenTelemetry, Dynatrace, Splunk</dd>
+												<dt>Data &amp; Testing</dt>
+												<dd>PostgreSQL, MySQL, Redis, Kafka; xUnit, Jest, Playwright, Karma</dd>
+											</dl>
+										</div>
+										<div class="exp-card edu-card reveal">
+											<h3 class="exp-role">Education</h3>
+											<p class="edu-school"><strong>University of South Florida</strong></p>
+											<p class="edu-line">B.S. Computer Science · May 2026</p>
+											<p class="edu-line">Senior · GPA <strong>3.95 / 4.00</strong></p>
+											<ul class="actions" style="margin-top: 1.25em;">
+												<li><a href="https://drive.google.com/file/d/1d_HQYQmHnq7EEbJOmQmGY2gI3y9lmKJG/view?usp=sharing" target="_blank" class="button">Résumé →</a></li>
+											</ul>
+										</div>
+									</div>
+								</section>
+
+							<!-- First Section -->
 							<section id="projects" class="main special">
 								<header class="major">
 									<h2><strong>Projects</strong></h2>
@@ -244,6 +326,37 @@
 					}, 0);
 				});
 			</script>
+
+	<!-- Scroll reveal -->
+		<script>
+		(function() {
+			// Tag project cards as reveal targets with a slight stagger
+			var cards = document.querySelectorAll('#projects .features > li');
+			for (var i = 0; i < cards.length; i++) {
+				cards[i].classList.add('reveal');
+				cards[i].style.transitionDelay = (i * 0.06) + 's';
+			}
+
+			var els = document.querySelectorAll('.reveal');
+			var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			if (!('IntersectionObserver' in window) || reduce) {
+				for (var j = 0; j < els.length; j++) els[j].classList.add('in-view');
+				return;
+			}
+
+			var io = new IntersectionObserver(function(entries) {
+				entries.forEach(function(e) {
+					if (e.isIntersecting) {
+						e.target.classList.add('in-view');
+						io.unobserve(e.target);
+					}
+				});
+			}, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+			for (var k = 0; k < els.length; k++) io.observe(els[k]);
+		})();
+		</script>
 
 	</body>
 </html>
