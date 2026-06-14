@@ -4105,13 +4105,13 @@ input, select, textarea {
 		white-space: nowrap;
 	}
 
-	.exp-card ul {
+	.exp-card ul:not(.actions) {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 	}
 
-	.exp-card ul li {
+	.exp-card ul:not(.actions) li {
 		position: relative;
 		padding-left: 1.1em;
 		margin: 0 0 0.6em;
@@ -4120,9 +4120,9 @@ input, select, textarea {
 		color: #5f5f5f;
 	}
 
-	.exp-card ul li:last-child { margin-bottom: 0; }
+	.exp-card ul:not(.actions) li:last-child { margin-bottom: 0; }
 
-	.exp-card ul li:before {
+	.exp-card ul:not(.actions) li:before {
 		content: '';
 		position: absolute;
 		left: 0;
