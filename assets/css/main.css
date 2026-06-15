@@ -3388,7 +3388,7 @@ input, select, textarea {
 
 	#main {
 		background-color: #ffffff;
-		color: #636363;
+		color: #3d3d3d;
 		border-radius: 0.25em;
 	}
 
@@ -3405,7 +3405,7 @@ input, select, textarea {
 		}
 
 		#main h1, #main h2, #main h3, #main h4, #main h5, #main h6 {
-			color: #636363;
+			color: #242424;
 		}
 
 		#main blockquote {
@@ -3964,8 +3964,8 @@ input, select, textarea {
 	}
 
 	.proj-body p {
-		font-size: 0.78em;
-		color: #777777;
+		font-size: 0.85em;
+		color: #555555;
 		margin: 0.25em 0 0;
 		line-height: 1.5;
 		flex: 1;
@@ -4064,7 +4064,8 @@ input, select, textarea {
 		display: flex;
 		flex-direction: column;
 		gap: 1.25em;
-		margin: 0 0 1.5em;
+		max-width: 50em;
+		margin: 0 auto 1.5em;
 	}
 
 	.exp-card {
@@ -4115,9 +4116,9 @@ input, select, textarea {
 		position: relative;
 		padding-left: 1.1em;
 		margin: 0 0 0.6em;
-		font-size: 0.9em;
-		line-height: 1.6;
-		color: #5f5f5f;
+		font-size: 0.95em;
+		line-height: 1.65;
+		color: #3d3d3d;
 	}
 
 	.exp-card ul:not(.actions) li:last-child { margin-bottom: 0; }
@@ -4136,6 +4137,8 @@ input, select, textarea {
 	/* Skills + Education row */
 	.exp-meta-row {
 		display: flex;
+		max-width: 50em;
+		margin: 0 auto;
 		flex-wrap: wrap;
 		gap: 1.25em;
 		text-align: left;
@@ -4167,11 +4170,11 @@ input, select, textarea {
 		margin: 0;
 		font-size: 0.9em;
 		line-height: 1.5;
-		color: #5f5f5f;
+		color: #3d3d3d;
 	}
 
 	.edu-card .edu-school { font-size: 1.05em; margin: 0 0 0.3em; }
-	.edu-card .edu-line   { font-size: 0.9em; color: #5f5f5f; margin: 0 0 0.3em; }
+	.edu-card .edu-line   { font-size: 0.9em; color: #3d3d3d; margin: 0 0 0.3em; }
 
 	@media screen and (max-width: 736px) {
 		.exp-card { padding: 1.25em 1.25em; }
