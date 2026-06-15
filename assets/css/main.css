@@ -4181,17 +4181,3 @@ input, select, textarea {
 		.exp-meta-row { flex-direction: column; }
 	}
 
-/* ============================================================
-   Soft section scroll-snap (desktop only, proximity = gentle)
-   ============================================================ */
-
-	@media screen and (min-width: 737px) {
-		html {
-			scroll-snap-type: y proximity;
-			scroll-padding-top: 1.5em;
-		}
-		#header,
-		#main > .main {
-			scroll-snap-align: start;
-		}
-	}
