@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>my projects</title>
+		<title>Spec to Component — Zahran Yahia Khan</title>
 		<link rel="shortcut icon" type="image/x-icon" href="rocket-lunch.png" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +20,8 @@
 
 				<!-- Header -->
 					<header id="header">
-						<h1>Design-MCP</h1>
-						<p>Spec-Driven Component Generator for RAG Systems</p>
+						<h1>Spec to Component</h1>
+						<p>A RAG pipeline that grounds AI-generated UI in your real design system. Validated end-to-end on Chakra UI v3.</p>
 					</header>
 
 					<!-- Nav -->
@@ -50,19 +50,34 @@
 
 										<!-- Description -->
 										<h2><strong>Description</strong></h2>
-										<p>Design-MCP is a TypeScript CLI pipeline that crawls design system documentation (starting with <strong>Chakra UI</strong>), extracts structured component specifications, and transforms them into semantic chunks optimized for <strong>RAG (Retrieval-Augmented Generation)</strong> systems.
-
+										<p>Ask an AI coding agent for a UI component and it often invents something that looks
+										plausible but quietly breaks your design system: wrong props, deprecated APIs,
+										inconsistent composition. The reason is structural. Most companies run their own
+										internal design system, not a generic one, so whatever the model absorbed in training
+										is the wrong thing to trust. I saw this concretely when an agent generated Chakra that
+										wouldn't compile, and a separate evaluation pass rated the broken output as correct: the
+										model wasn't careless, it was faithful to the wrong version.
 										<br>
 										<br>
-										The tool automates what would otherwise be a tedious manual process: gathering component props, code examples, and accessibility notes from documentation sites, then normalizing that data into machine-readable formats suitable for vector search and AI-powered component generation.
+										<strong>Spec to Component</strong> grounds agent-generated UI in the <em>real</em> system
+										of record. It crawls a design system's own docs, chunks and embeds them, retrieves the
+										relevant pieces at generation time, and gates the output on signals a compiler can verify
+										rather than an LLM's opinion. Point the crawler at a different design system and the same
+										retrieval and validation loop applies.
+										<br>
+										<br>
+										Chakra UI v3 is the validated proof case, chosen because its v2&rarr;v3 breaking change is
+										exactly the kind of drift that trips up a model's memory: <code>colorScheme</code> became
+										<code>colorPalette</code>, and monolithic components became slot-based composition. 897
+										chunks, 50 components, generation gated on <code>tsc</code> and lint, 100% valid single-shot.
 										</p>
 
 										<!-- Pipeline Architecture -->
-										<h2><strong>Pipeline Architecture</strong></h2>
+										<h2><strong>Pipeline</strong></h2>
 										<p>
-											<strong>Step 0: Extract</strong> &rarr; <strong>Step 1: Normalize</strong> &rarr; <em>Step 2: Embed</em> &rarr; <em>Step 3: Search</em>
+											<strong>Extract</strong> &rarr; <strong>Normalize</strong> &rarr; <strong>Embed</strong> &rarr; <strong>Search</strong> &rarr; <strong>Generate</strong> &rarr; <em>Web UI</em>
 											<br>
-											<small>(Steps 0 &amp; 1 implemented &bull; Steps 2 &amp; 3 in progress)</small>
+											<small>Full pipeline shipped and deployed: RAG retrieval, DeepSeek V4 generation, objective validation gates, live Cloud Run demo.</small>
 										</p>
 
 										<div class="row">
@@ -70,16 +85,32 @@
 												<h2><strong>Features</strong></h2>
 												<ol>
 													<li>
-														Built a <strong>Playwright-based web crawler</strong> that discovers and navigates design system documentation pages, extracting structured component data (props, code examples, accessibility notes) with schema validation on every artifact via Zod.
+														Built a <strong>design-system-agnostic RAG pipeline</strong> (Playwright BFS crawler &rarr;
+														normalizer &rarr; embedder &rarr; retriever) that turns any design system's own docs into
+														typed, retrievable chunks, then pointed it at Chakra UI v3 as the validated proof case.
+														The result: <strong>897 typed chunks</strong> (code examples, prop references, overviews,
+														capabilities) across 50 components, embedded with OpenAI <code>text-embedding-3-small</code>
+														into <strong>Qdrant</strong> for reserved-slot retrieval.
 													</li>
 													<li>
-														Implemented a <strong>multi-stage normalization pipeline</strong> with an inference engine (code analyzer, section inferrer, intent classifier with 14 intent classes) that transforms raw extractions into semantic chunks with natural language explanations.
+														Found that an <strong>LLM-as-judge inverts on Chakra v3</strong>, preferring the familiar
+														v2 API and marking correct v3 as "outdated." So I replaced it with three
+														<strong>objective, compiler-verifiable gates</strong> (a <code>tsc</code> type-check, a
+														v2-smell lint, a composition lint) plus a <strong>bounded self-heal loop</strong> that feeds
+														<code>tsc</code> diagnostics and smell-named hints back to the model.
 													</li>
 													<li>
-														Designed a <strong>composition-scored code filtering</strong> system that surfaces meaningful usage patterns while filtering out boilerplate, paired with column-order-agnostic props table parsing for robust extraction across varying doc layouts.
+														Ran a <strong>grounded-vs-no-context A/B</strong> and a six-pass correction-loop experiment
+														that took grounded <code>tsc</code>-pass from <strong>47% to 100% single-shot</strong> on
+														<strong>DeepSeek V4</strong> (swapped in from gpt-4o because it's cheaper and, with
+														grounding, more reliable). Recorded <strong>honest negatives</strong> too: a naïve
+														<code>tsc</code>-feedback repair loop failed completely, and a thinking-mode A/B showed no
+														objective gain at <strong>+46% latency</strong>.
 													</li>
 													<li>
-														Engineered <strong>resilient error handling</strong> with a success/failure union return type and automatic fallback chunk generation, plus JSONL metrics tracking for monitoring transformation quality across components.
+														Deployed a <strong>single-origin SPA + API</strong> to Google Cloud Run (Docker, slimmed
+														<strong>539&rarr;462 MB</strong>) with Qdrant Cloud for retrieval and a client-side Sandpack
+														live preview, keeping the deploy image Chromium-free.
 													</li>
 												</ol>
 											</div>
@@ -95,37 +126,154 @@
 													<a href="https://github.com/zahran001/Design-MCP" target="_blank">source code</a>
 													<br>
 													<br>
+													<li><a class="icon solid fa-globe">
+														<span class="label"></span></a></li>
+													<a href="https://spec-to-component-986872156950.us-central1.run.app" target="_blank">live demo</a>
+													<small> (Cloud Run free tier — may cold-start on the first request)</small>
+													<br>
+													<br>
 													<li><a class="icon solid fa-hammer">
 														<span class="label"></span></a></li>
-													<span><strong>TypeScript, Node.js, Playwright, Commander.js, Zod, Docker</strong></span>
+													<span><strong>TypeScript, RAG, Qdrant, OpenAI Embeddings, DeepSeek V4, React + Chakra UI v3, Sandpack, Docker, Cloud Run</strong></span>
 													<br>
 													<br>
 													<li><a class="icon solid fa-tasks">
 														<span class="label"></span></a></li>
-													<span><strong>Status:</strong> In Progress &mdash; Extraction &amp; normalization complete, embedding &amp; retrieval next</span>
+													<span><strong>Status:</strong> Live &amp; deployed. Full pipeline (extract, normalize, embed, search, generate) plus a deployed web UI.</span>
 												</ul>
 
 											</div>
 										</div>
 
+										<!-- Architecture -->
+										<section>
+											<h3><strong>Architecture</strong></h3>
+											<p>
+												<strong>Offline — build the corpus:</strong><br>
+												Crawl (Playwright) &rarr; Normalize (typed chunks) &rarr; Embed (OpenAI, 1536-d) &rarr; Qdrant (897 vectors)
+											</p>
+											<p>
+												<strong>Per request:</strong><br>
+												NL request &rarr; Retrieve (reserved-slot) &rarr; Generate (DeepSeek V4, grounded) &rarr; <code>tsc</code> self-heal (bounded loop) &rarr; Objective gates (<code>tsc</code> &middot; smell &middot; composition) &rarr; Live preview (Sandpack)
+											</p>
+											<p>
+												<small>One container serves the SPA + API (single origin, no CORS). Generation runs on DeepSeek V4;
+												embeddings stay on OpenAI (the query vector must match the corpus). Render-check is off in
+												prod: Sandpack renders client-side and <code>tsc</code> stays the gate.</small>
+											</p>
+										</section>
 
-								<!-- Screenshots -->
-									<section>
-										<!-- <h3><strong>Demo</strong></h3> -->
-										<!-- <span class="image center">
-											<span class="image fit"><img src="images/designmcp1.png" alt="" /></span>
-										</span> -->
-										<!-- <span class="image center">
-											<span class="image fit"><img src="images/designmcp2.png" alt="" /></span>
-										</span> -->
-										<!-- <span class="image center">
-											<span class="image fit"><img src="images/designmcp3.png" alt="" /></span>
-										</span> -->
+										<!-- Screenshots -->
+										<section>
+											<h3><strong>The Generator</strong></h3>
+											<p>Grounded, type-checked, live-rendered, with the objective report and the exact doc chunks it was grounded in.</p>
+											<span class="image center">
+												<span class="image fit"><img src="images/designmcp1.png" alt="Spec to Component generator: a grounded, type-checked Chakra v3 component with colorPalette (not the v2 colorScheme), the objective report, and the retrieved doc chunks" /></span>
+											</span>
+											<br>
+											<h3><strong>The Engineering Page</strong></h3>
+											<p>Architecture, measured results, and the decisions and tradeoffs, including the honest negatives.</p>
+											<span class="image center">
+												<span class="image fit"><img src="images/designmcp2.png" alt="Spec to Component in-app engineering page: architecture diagram, result cards, and decisions/tradeoffs including honest negative results" /></span>
+											</span>
+										</section>
+
+										<!-- Results -->
+										<section>
+											<h3><strong>Results</strong></h3>
+											<div class="row">
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>100%</strong><br>Grounded tsc-valid, single-shot<br><small>15 v2-landmine prompts, DeepSeek, 0 repairs (gpt-4o ~93% hinted)</small></p>
+												</div>
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>100%</strong><br>Held-out generalization<br><small>unseen prompts: tsc &middot; smell-free &middot; composition</small></p>
+												</div>
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>+46% / 0</strong><br>Thinking mode: latency / gain<br><small>A/B measured &rarr; shipped off</small></p>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>539&rarr;462 MB</strong><br>Prod image slim<br><small>dep reclassify + npm prune --omit=dev</small></p>
+												</div>
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>629</strong><br>Unit tests passing<br><small>22 suites</small></p>
+												</div>
+												<div class="col-4 col-12-medium">
+													<p style="text-align: center;"><strong>0.684&rarr;0.748</strong><br>Retrieval gP@k<br><small>authentic prose beats templates</small></p>
+												</div>
+											</div>
+										</section>
+
+										<!-- Engineering Reflection -->
+										<section>
+											<h3><strong>Engineering Reflection</strong></h3>
+
+											<p>The single most useful finding in this project was a negative one: I built an LLM-as-judge to
+											score the generated components and found it <strong>inverts on Chakra v3</strong> — it rates
+											correct v3 composition as "outdated" and incorrect v2 as "current," because its training data
+											is v2-dominant. You can't evaluate API-drift compliance with a model that shares the drift bias,
+											which is why <code>tsc</code> + a v2-smell lint + a composition lint became the trusted spine and
+											the judge got demoted to a secondary signal.</p>
+
+											<span id="additional-reflection-designmcp" style="display: none;">
+												<p>The correction loop had its own honest negative: my first instinct for fixing type errors was
+												to feed raw <code>tsc</code> compiler output back to the model for repair. It failed completely,
+												0 of 7 cases fixed across 14 attempts, because TypeScript's JSX-prop errors don't name the
+												bad prop. What actually worked was reusing the v2&rarr;v3 rename map to turn those coarse errors
+												into named-prop hints ("this looks like the old <code>colorScheme</code> prop; v3 uses
+												<code>colorPalette</code>"), which took grounded <code>tsc</code>-pass from 53% to 73% — the
+												single biggest lift in the whole experiment.</p>
+
+												<p>DeepSeek's "thinking mode" was the obvious next lever to pull, so I A/B'd it instead of
+												assuming. No objective-gate gain anywhere (everything was already at ceiling), and <strong>+46%
+												latency</strong> for nothing. Shipped off, with the numbers to back that call rather than a
+												guess.</p>
+
+												<p>I also swapped generation from gpt-4o to the cheaper DeepSeek V4, and with grounding in
+												place, it <em>beat</em> the gpt-4o baseline on the objective gates (93%&rarr;100% single-shot).
+												The reliability came from retrieval + validation, not a bigger or pricier model, which is the
+												whole thesis of the project restated as a result.</p>
+
+												<p>If you have ideas or want to suggest improvements, feel free to
+												<a href="https://github.com/zahran001/Design-MCP/issues" target="_blank">open a GitHub issue</a>.</p>
+											</span>
+
+											<br /><br />
+											<a href="#" id="toggle-reflection-designmcp"
+												style="color: #8cc9f0; text-decoration: none; cursor: pointer;">
+												Read more ▼
+											</a>
+
+										</section>
+
 									</section>
 
 							</section>
 
 					</div>
+
+					<!-- Reflection toggle script -->
+					<script>
+						(function () {
+							var toggleBtn = document.getElementById('toggle-reflection-designmcp');
+							var additionalReflection = document.getElementById('additional-reflection-designmcp');
+
+							if (toggleBtn && additionalReflection) {
+								toggleBtn.addEventListener('click', function (e) {
+									e.preventDefault();
+
+									if (additionalReflection.style.display === 'none') {
+										additionalReflection.style.display = 'inline';
+										toggleBtn.innerHTML = 'Read less ▲';
+									} else {
+										additionalReflection.style.display = 'none';
+										toggleBtn.innerHTML = 'Read more ▼';
+									}
+								});
+							}
+						})();
+					</script>
 
 				<!-- Footer -->
 				<footer id="footer">
